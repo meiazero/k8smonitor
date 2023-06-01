@@ -1,5 +1,9 @@
 # monitoring-stack
 
 
-- Repositorio base:
-https://github.com/antonputra/tutorials/tree/main/lessons/135
+- Repositorio base prometheus:
+https://github.com/techiescamp/kubernetes-prometheus
+
+- 
+
+
