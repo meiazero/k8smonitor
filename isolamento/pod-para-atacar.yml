@@ -7,7 +7,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-p-atacar
-  namespace: devpods
+  namespace: isolamento
   labels:
     app.kubernetes.io/app: pod-p-atacar
 spec:
