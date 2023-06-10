@@ -11,7 +11,7 @@ spec:
     selector:
         app: prometheus-server
     ports:
-        - port: 8080
+        - port: 9090
           targetPort: 9090
     externalIPs:
         -  # your external IP
