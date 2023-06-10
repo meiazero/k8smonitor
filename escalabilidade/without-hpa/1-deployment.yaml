@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-deploy-nao-escalar
+    namespace: escalar
+    labels:
+        app-deploy: nginx-deploy-nao-escalar
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app-deploy: nginx-deploy-nao-escalar
+    template:
+        metadata:
+            labels:
+                app-deploy: nginx-deploy-nao-escalar
+        spec:
+            containers:
+                - name: nginx-deploy-nao-escalar
+                  image: nginx:latest
+                  resources:
+                      limits:
+                          cpu: 500m
+                          memory: 512Mi
+                      requests:
+                          cpu: 200m
+                          memory: 256Mi
+                  ports:
+                      - containerPort: 80
