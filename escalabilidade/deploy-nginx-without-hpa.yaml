@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: escalar
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-deploy-escalar
+    namespace: escalar
+    labels:
+        app-deploy: nginx-deploy-escalar
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app-deploy: nginx-deploy-escalar
+    template:
+        metadata:
+            labels:
+                app-deploy: nginx-deploy-escalar
+        spec:
+            containers:
+                - name: nginx-deploy-escalar
+                  image: nginx:latest
+                  resources:
+                      limits:
+                          cpu: 500m
+                          memory: 512Mi
+                      requests:
+                          cpu: 200m
+                          memory: 256Mi
+                  ports:
+                      - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: svc-loadbalancer
+    namespace: escalar
+spec:
+    type: LoadBalancer
+    selector:
+        app-deploy: nginx-deploy-escalar
+    ports:
+        - name: http
+          port: 6000
+          targetPort: 80
+    externalIPs:
+        -  # ip of node
