@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: svc-loadbalancer-without-hpa
+    namespace: escalar
+spec:
+    type: LoadBalancer
+    selector:
+        app-deploy: nginx-deploy-nao-escalar
+    ports:
+        - name: http
+          port: 6500
+          targetPort: 80
+    externalIPs:
+        -  # ip of node

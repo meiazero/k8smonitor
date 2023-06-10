@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: svc-observar
+    namespace: isolamento
+spec:
+    selector:
+        app.kubernetes.io/name: pod-observar
+    type: NodePort
+    ports:
+        - protocol: TCP
+          port: 80
+          nodePort: 30082
