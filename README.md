@@ -1,8 +1,9 @@
 # monitoring-stack
 
+## Base of the project
 
-- Repositorio base prometheus:
-https://github.com/techiescamp/kubernetes-prometheus
+-   prometheus repo base:
+    https://github.com/techiescamp/kubernetes-prometheus
 
-- Repositorio base para ```metrics-server.yaml```
-https://github.com/kubernetes/kube-state-metrics
+-   `metrics-server.yaml` is base on:
+    https://github.com/kubernetes/kube-state-metrics
