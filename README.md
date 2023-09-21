@@ -46,10 +46,6 @@ kubectl get po,svc -n isolamento
 
 > go to http://cluster-ip:9090
 
-## Access the Grafana
-
-> check this repo: [getmp](https://github.com/meiazero/getmp)
-
 ## License
 
 [MIT License](LICENSE)
