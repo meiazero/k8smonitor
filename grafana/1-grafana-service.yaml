@@ -4,12 +4,11 @@ metadata:
   name: grafana-service
   namespace: monitoring
 spec:
-  selector:
-    app: grafana
-  port:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-   externalIPs:
-        -  # your external IP
- 
+    type: LoadBalancer
+    selector:
+        app:  grafana-deployment
+    ports:
+        - port: 3000
+          targetPort: 3000
+    externalIPs:
+        -  # External IPs
