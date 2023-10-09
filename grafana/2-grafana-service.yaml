@@ -14,4 +14,4 @@ spec:
         - port: 3000
           targetPort: 3000
     externalIPs:
-        -  # External IPs
+        -  192.168.0.9
