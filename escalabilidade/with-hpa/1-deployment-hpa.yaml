@@ -18,12 +18,13 @@ spec:
       containers:
         - name: nginx-deploy-escalar
           image: nginx:latest
-          # resources:
-          #   limits:
-          #     cpu: 500m
-          #     memory: 512Mi
-          #   requests:
-          #     cpu: 200m
-          #     memory: 256Mi
+          resources:
+            limits:
+              cpu: "1000m" # 1 CPU
+              memory: "1Gi"
+            requests:
+              cpu: "200m" # 0.2 CPU
+              memory: "512Mi"
           ports:
             - containerPort: 80
+  minReadySeconds: 5
