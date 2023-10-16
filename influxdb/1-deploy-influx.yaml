@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: influxdb
+  namespace: db
+  labels:
+    app-deploy: influxdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: influxdb
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+        - name: influxdb
+          image: influxdb
+          env:
+            - name: INFLUXDB_DB
+              value: prometheus
+            - name: INFLUXDB_ADMIN_USER
+              value: root
+            - name: INFLUXDB_ADMIN_PASSWORD
+              value: toor
+          ports:
+            - containerPort: 8086
