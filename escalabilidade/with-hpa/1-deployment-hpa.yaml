@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deploy-escalar
-  namespace: escalar
+  namespace: with-hpa 
   labels:
     app-deploy: nginx-deploy-escalar
 spec:

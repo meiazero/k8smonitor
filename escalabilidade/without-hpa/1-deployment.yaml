@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deploy-nao-escalar
-  namespace: escalar
+  namespace: without-hpa
   labels:
     app-deploy: nginx-deploy-nao-escalar
 spec:
