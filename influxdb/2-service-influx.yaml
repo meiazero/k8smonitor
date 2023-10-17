@@ -4,7 +4,10 @@ metadata:
   name: influxdb
   namespace: db
 spec:
-  ports:
-    - port: 8086
+  type: LoadBalancer
   selector:
     app: influxdb
+  ports:
+    - port: 8086
+  externalIPs:
+    - 192.168.0.9
