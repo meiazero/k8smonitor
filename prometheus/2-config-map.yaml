@@ -135,15 +135,3 @@ data:
         - source_labels: [__meta_kubernetes_service_name]
           action: replace
           target_label: kubernetes_name
-        # Adicione a configuração para o InfluxDB usando remote_write
-      - job_name: 'influxdb'
-        honor_labels: true
-        static_configs:
-          - targets:
-            - 'influxdb.svc.cluster.local:8086'
-        remote_write:
-          - url: "http://influxdb.svc.cluster.local:8086/api/v1/prom/write?db=mydb"
-            basic_auth:
-              username: "root"
-              password: "toor"
-
